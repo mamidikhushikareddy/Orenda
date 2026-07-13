@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Profit and Loss Calculator</title>
+	<link rel="icon" href="image/logo.png" type="image/icon type" />
+	<style>
+        body{
+            background-image: url("https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0553/1692/IP_4_lemon_lime_pastel_shop_preview.png");
+            font-family: Verdana;
+			width: 300px;
+			height:600px;
+			padding-left: 10px;;
+	        margin-right:200px;
+			margin-top: 100px;
+			margin-left:350px;
+			margin-bottom:200px;
+		
+		  }
+        .plcalculate{
+            text-align: center;
+            background-color:rgb(22, 139, 53);
+            width: 500px;
+			height: 575px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3px;
+			position:absolute;
+			top:8px;
+			left:350px;
+			
+        }
+		button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 1000;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #c3db69;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+	
+		.cost__price{
+         border: none;
+         padding: 10px;
+         border-radius: 15px;
+         outline: none;
+}
+       .selling__price{
+         border: none;
+         padding: 10px;
+         border-radius: 15px;
+         outline: none;
+	   }
+        h1{
+	       font-size: 30px;
+        }
+		p{
+			font-size: 35px;
+		}
+	
+        h2{
+            color: rgb(0, 0, 0);
+			size:35px;
+        }
+
+		
+    </style>
+</head>
+<body>
+	<div class="plcalculate">
+		<h1>PROFIT AND LOSS CALCULATOR</h1>
+
+		<p>Farmer Investments :
+			<input class="cost__price" type="number" />
+		</p>
+
+		<p>Market value Returns :
+			<input class="selling__price" type="number" />
+		</p>
+
+		<button onclick="Calculate()">Calculate</button>
+
+		<p>
+			<h2 class="profit__loss"></h2>
+			<h2 class="profit__loss__percentage"></h2>
+			<h2 class="nothing"></h2>
+		</p>
+	</div>
+
+	<script>
+		function Calculate(){
+		const CP= document.querySelector(".cost__price").value;
+		const SP= document.querySelector(".selling__price").value;
+		
+
+		const profit__loss=document.querySelector(".profit__loss");
+		const percentage=document.querySelector(".profit__loss__percentage");
+		const nothing=document.querySelector(".nothing");
+
+		profit__loss.innerHTML="";
+		percentage.innerHTML="";
+		nothing.innerHTML="";
+
+		if(SP>CP){
+			const profit = SP - CP;
+			const profit_percent= ((profit/CP)*100).toFixed(2);
+
+			profit__loss.innerHTML="PROFIT : Rs "+ profit;
+			percentage.innerHTML="Profit Percentage : "+ profit_percent+"%";
+		}
+		if(SP<CP){
+			const loss = CP - SP;
+			const loss_percent= ((loss/CP)*100).toFixed(2);
+
+			profit__loss.innerHTML="LOSS : Rs "+ loss;
+			percentage.innerHTML="Loss Percentage : "+ loss_percent+"%";
+		}
+		if(SP==CP){
+			nothing.innerHTML="No Profit No Loss.";
+		}
+	}
+	
+	</script>
+</body>
+
+<!--Side BOx COde-1-->
+
+<head>
+	<title>side-box1</title>
+	<title>side box2</title>
+	<style>
+		.side-box {
+			background-color: #d0ef7d;
+			padding: 20px;
+			margin: 20px;
+			float: left;
+			width: 300px;
+			box-sizing: border-box;
+			position: fixed;
+			top:50px;
+			left:5px;
+			
+		}
+		.side-box h2 {
+			font-size: 24px;
+			margin-top: 0;
+		}
+		.side-box p {
+			font-size: 20px;
+			line-height: 1.5;
+		}
+		.side-box2 {
+			background-color: #d0ef7d;
+			padding: 20px;
+			margin: 20px;
+			float: left;
+			width: 300px;
+			box-sizing: border-box;
+			position:fixed;
+			top:50px;
+			right:5px;
+			
+		}
+		.side-box2 h2 {
+			font-size: 24px;
+			margin-top: 0;
+		}
+		.side-box2 p {
+			font-size: 20px;
+			line-height: 1.5;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="side-box">
+		<h2>SUGGESTIONS FOR PROFITS:</h2>
+		<p>If you got profits, you are doing great, keep going. Try investing the profit amount back into the farming to increase the yield and to prevent any risk factors.Since you already bet the marketprice, now focus more on enhancing the crop quality to produce best quality grains.</p>
+	</div>
+	<div class="side-box2">
+		<h2>SUGGESTIONS FOR LOSSES:</h2>
+		<p>If you got LOSS, you have to optimize your working inorder to compensate the loss. Try investing less to experience minimal risk.Find out the factors affecting your farming outcome. Firstly try getiing Return on Investment then work for getting profits.</p>
+
+</body>
+
+
+
+</html>
+	
+
+
